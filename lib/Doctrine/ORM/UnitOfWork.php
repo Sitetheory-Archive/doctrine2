@@ -3416,11 +3416,11 @@ class UnitOfWork implements PropertyChangedListener
      */
     private function mergeEntityStateIntoManagedCopy($entity, $managedCopy)
     {
-        if (!$this->isLoaded($entity)) {
+        if (! $this->isLoaded($entity)) {
             return;
         }
 
-        if (!$this->isLoaded($managedCopy)) {
+        if (! $this->isLoaded($managedCopy)) {
             $managedCopy->__load();
         }
 
